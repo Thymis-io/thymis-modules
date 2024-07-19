@@ -67,3 +67,20 @@ class HomeAssistant(Module):
             services.home-assistant.config.homeassistant.time_zone = "{timezone}";
             """
         )
+
+
+class ESPHome(Module):
+    displayName: str = "ESPHome"
+    icon: str = thymis_controller.lib.read_into_base64(
+        pathlib.Path(__file__).parent / "assets" / "esphome.svg"
+    )
+
+    def write_nix_settings(
+        self, f, module_settings: thymis_controller.models.ModuleSettings, priority: int
+    ):
+        f.write(
+            f"""
+            services.esphome.enable = true;
+            services.esphome.openFirewall = true;
+            """
+        )
