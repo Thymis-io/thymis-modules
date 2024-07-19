@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "thymis_modules"
+version = "0.1.0"
+description = ""
+authors = ["Adrian Block <adrian@thymis.io>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+thymis-controller = { git = "https://github.com/thymis-io/thymis.git", subdirectory = "controller" }
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

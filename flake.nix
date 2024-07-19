@@ -1,0 +1,7 @@
+{
+  description = "";
+  inputs = {
+  };
+  outputs = { self }: {
+  };
+}
