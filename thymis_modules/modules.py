@@ -84,3 +84,19 @@ class ESPHome(Module):
             services.esphome.openFirewall = true;
             """
         )
+
+class NodeRED(Module):
+    displayName: str = "Node-RED"
+    icon: str = thymis_controller.lib.read_into_base64(
+        pathlib.Path(__file__).parent / "assets" / "node-red.svg"
+    )
+
+    def write_nix_settings(
+        self, f, module_settings: thymis_controller.models.ModuleSettings, priority: int
+    ):
+        f.write(
+            f"""
+            services.node-red.enable = true;
+            services.node-red.openFirewall = true;
+            """
+        )
